@@ -1,6 +1,7 @@
 import './style.css'
 
-import {  calculaValorCarta, pintaCarta, imprimeMsg, juegaComputadora,crearCartas } from './src/black/usecase/index'
+import {  calculaValorCarta, 
+    pintaCarta, imprimeMsg, juegaComputadora,crearCartas } from './src/black/usecase/index'
 import {
     btnJuegoNuevo, btnPedirCarta, btnJuegaComputadora, divJugadorCartas,
     divJugadorComputadora, smallPuntosJugador, smallPuntosComputadora, VALOR_GANA, puntos,msgDiv
