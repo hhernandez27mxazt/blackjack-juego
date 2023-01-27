@@ -1,0 +1,37 @@
+.titulo {
+  color: beige;
+  text-align: center;
+}
+
+.fondo {
+  background-color: black;
+  border-radius: 7px;
+  padding: 20px;
+
+}
+
+body {
+  background-color: #044545;
+  color: aliceblue;
+}
+footer {
+  color: #96d5d5;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 60px;
+ 
+}
+
+
+.carta {
+  position: relative; 
+  width: 200px;
+  left: 120px; 
+  margin-left: -60px;
+}
+
+
+#jugador-cartas, #computadora-cartas{
+  height: 320px;
+ 
+}
