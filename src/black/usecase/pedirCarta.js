@@ -1,5 +1,13 @@
 
-export const pedirCarta = () => {
+
+import {  calculaValorCarta } from "./calculavalor"
+import { imprimeMsg } from "./imprimemsg"
+import { pintaCarta } from "./pintacarta"
+import { VALOR_GANA,puntos, divJugadorCartas,btnPedirCarta,smallPuntosJugador,btnJuegaComputadora} from "./constantes"
+
+
+
+export const pedirCarta = (arregloCartas) => {
 
     if (arregloCartas.length > 0) {
         const carta = arregloCartas.pop()

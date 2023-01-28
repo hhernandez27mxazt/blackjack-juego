@@ -32,7 +32,7 @@ const llamaJuegoNuevoFunc = () => {
 
 const llamaPedirCarta = () => {
     
-   pedirCarta()
+   pedirCarta(arregloCartas)
 }
 
 
