@@ -1,33 +1,18 @@
 import './style.css'
 
-import {  calculaValorCarta, 
-    pintaCarta, imprimeMsg, juegaComputadora,pedirCarta,
-    crearCartas } from './src/black/usecase/index'
+import {  juegaComputadora,pedirCarta,crearCartas } from './src/black/usecase/index'
 import {
     btnJuegoNuevo, btnPedirCarta, btnJuegaComputadora, divJugadorCartas, 
-    divJugadorComputadora, smallPuntosJugador, smallPuntosComputadora, VALOR_GANA, puntos,msgDiv
+    divJugadorComputadora, smallPuntosJugador, smallPuntosComputadora, puntos,msgDiv
 } from './src/black/usecase/constantes'
-
+import { creaJuegoNuevo } from './src/black/usecase/juegonuevo'
 
 'use strict'
-
 let arregloCartas = []
 
-
-
 const llamaJuegoNuevoFunc = () => {
-   
     arregloCartas = crearCartas()
-    divJugadorCartas.innerHTML = ''
-    divJugadorComputadora.innerHTML = ''
-    btnPedirCarta.disabled = false
-    btnJuegaComputadora.disabled = false
-    msgDiv.innerHTML = ''
-    smallPuntosJugador.innerHTML = '0'
-    smallPuntosComputadora.innerHTML = '0'
-    puntos.puntosJugador = 0
-    puntos.puntosComputadora = 0
-
+    creaJuegoNuevo()
 }
 
 const llamaPedirCarta = () => {
@@ -43,7 +28,6 @@ const llamarjuegaComputadora = () => {
 const acumulaPuntosComputadora = (valor = 0, contador) => {
     contador += valor
 }
-
 
 btnJuegoNuevo.addEventListener('click', llamaJuegoNuevoFunc)
 btnPedirCarta.addEventListener('click', llamaPedirCarta)
