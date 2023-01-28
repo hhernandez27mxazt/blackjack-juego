@@ -1,10 +1,10 @@
 import './style.css'
 
 import {  calculaValorCarta, 
-    pintaCarta, imprimeMsg, juegaComputadora,
+    pintaCarta, imprimeMsg, juegaComputadora,pedirCarta,
     crearCartas } from './src/black/usecase/index'
 import {
-    btnJuegoNuevo, btnPedirCarta, btnJuegaComputadora, divJugadorCartas,
+    btnJuegoNuevo, btnPedirCarta, btnJuegaComputadora, divJugadorCartas, 
     divJugadorComputadora, smallPuntosJugador, smallPuntosComputadora, VALOR_GANA, puntos,msgDiv
 } from './src/black/usecase/constantes'
 
@@ -30,32 +30,9 @@ const llamaJuegoNuevoFunc = () => {
 
 }
 
-const pedirCarta = () => {
-
-    if (arregloCartas.length > 0) {
-        const carta = arregloCartas.pop()
-        pintaCarta(carta, divJugadorCartas)
-
-        const valorCarta = calculaValorCarta(carta)
-        puntos.puntosJugador += valorCarta
-
-
-        if (puntos.puntosJugador === VALOR_GANA) {
-            imprimeMsg('alert-success', 'Has ganado amigo 👍🏻')
-            btnPedirCarta.disabled = true
-        }
-
-        smallPuntosJugador.innerHTML = puntos.puntosJugador
-
-        if (puntos.puntosJugador > VALOR_GANA) {
-            btnPedirCarta.disabled = true
-            btnJuegaComputadora.disabled = true
-            imprimeMsg('alert-danger', 'Has perdido amigo 👎🏽')
-
-        }
-    }
-
-
+const llamaPedirCarta = () => {
+    
+   pedirCarta()
 }
 
 
@@ -69,5 +46,5 @@ const acumulaPuntosComputadora = (valor = 0, contador) => {
 
 
 btnJuegoNuevo.addEventListener('click', llamaJuegoNuevoFunc)
-btnPedirCarta.addEventListener('click', pedirCarta)
+btnPedirCarta.addEventListener('click', llamaPedirCarta)
 btnJuegaComputadora.addEventListener('click', llamarjuegaComputadora)
