@@ -15,3 +15,4 @@ export const puntos={
     puntosJugador:0,
     puntosComputadora: 0 
 }
+
