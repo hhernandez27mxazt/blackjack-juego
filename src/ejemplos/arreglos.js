@@ -21,26 +21,29 @@ console.log(animales)
 
 // console.log(nombre)
 
-const numbers = [1, 4, 9,34,47];
+const numbers = [1, 4, 9, 34, 47];
 numbers.map(function (num) {
     return Math.sqrt(num);
 });
-const buscar = "marrano"
-//solo regresa un elemento 
-const encontrado =animales.find((animal) => {
-    console.log("Itera:"+animal.nombre)
-    if (animal.nombre === buscar) {
-        return animal
-    }
-})
+
+const buscarPorNombre = (nombre) => {
+
+    return animales.find((animal) => {
+
+        if (animal.nombre === nombre) {
+            return animal
+        }
+    })
+}
+console.log(buscarPorNombre("marrano"))
 
 
 const resultadoFiltro = animales.filter((animal) => {
     return animal.nombre === buscar
-    
-} )
-var doubles = numbers.map(function(x) {
-   return x * 2;
+
+})
+var doubles = numbers.map(function (x) {
+    return x * 2;
 });
 
 
